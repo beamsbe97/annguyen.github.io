@@ -1,6 +1,11 @@
 ---
 layout: home
-title: An Nguyen
 ---
 
-Welcome to my GitHub Pages site.
+## Hi, I’m An
+
+I’m interested in AI and data science.
+
+### Projects
+- GAN-based face animation
+- Recommender systems
