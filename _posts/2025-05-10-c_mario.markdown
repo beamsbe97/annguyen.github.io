@@ -9,10 +9,9 @@ date: "2025-05-10"
 Generating Playable Mario Levels from Agent Experience
 </h2>
 
-<h1>Abstract</h1>
-<p>
+<h3>Abstract</h3>
 This project explores the intersection of procedural content generation (PCG) and reinforcement learning (RL) for creating playable Super Mario Bros levels. By combining generative models with trained RL agents, we enable the automatic design of levels with controllable difficulty.
 
-</p>
+
 
 

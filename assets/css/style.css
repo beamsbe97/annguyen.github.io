@@ -1,4 +1,10 @@
 
+.home-container {
+  max-width: 70%;
+  margin: 0 auto;       /* center horizontally */
+  padding: 3rem 1rem;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
