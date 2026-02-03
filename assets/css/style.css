@@ -65,7 +65,7 @@
 
 .post {
   max-width: 720px;     /* controls column width */
-  width: 100%;
+  width: 70%;
   line-height: 1.7;
   font-size: 1.05rem;
 }
