@@ -3,10 +3,18 @@ layout: home
 title: Machine Learning Portfolio
 ---
 
-## Hi, I’m An
+This is my Machine Learning blog.
 
-I’m interested in AI 
+<h1>Posts</h1>
 
-### Projects
-- GAN-based face animation
-- Recommender systems
+<div class="posts">
+  {% for post in site.posts %}
+    <div class="post-card">
+      <img src="{{ post.thumbnail }}" alt="{{ post.title }}">
+      <h2>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </h2>
+      <p>{{ post.date | date: "%b %d, %Y" }}</p>
+    </div>
+  {% endfor %}
+</div>
