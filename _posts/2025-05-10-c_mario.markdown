@@ -9,9 +9,24 @@ date: "2025-05-10"
 Generating Playable Mario Levels from Agent Experience
 </h2>
 
-<h3>Abstract</h3>
+
 This project explores the intersection of procedural content generation (PCG) and reinforcement learning (RL) for creating playable Super Mario Bros levels. By combining generative models with trained RL agents, we enable the automatic design of levels with controllable difficulty.
 
+<h3>Abstract</h3>
+
+We propose a dual pipeline framework where generative models (DCGAN and diffusion models) are trained to generate Mario levels conditioned on empirically derived difficulty scores. These scores are computed from RL agents (Dueling DQN and PPO) trained to play Mario levels.
+
+    Levels are processed into symbolic representations.
+    Generators output new level segments conditioned on difficulty.
+    RL agents evaluate playability, enabling iterative feedback.
+
+Key findings:
+
+    DCGANs produced the most coherent and playable levels.
+    Diffusion models underperformed, struggling with structural coherence.
+    PPO agents achieved stable performance and successfully navigated generated levels.
+
+This approach demonstrates a scalable method for difficulty-aware procedural content generation.
 
 
 
