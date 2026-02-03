@@ -13,13 +13,13 @@
 }
 
 .card {
+  width: 100px;
+  height: 100px;
   display: flex;
   flex-direction: column;
 }
 
 .card img {
-  width: 200px;
-  height: 200px;
   border-radius: 6px;
   margin-bottom: 1.5rem;
   width: auto;        /* ← prevents upscaling */
