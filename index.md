@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: My Machine Learning Blog
 ---
 
 <div class="cards">
