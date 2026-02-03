@@ -57,3 +57,27 @@
   text-decoration: underline;
 }
 
+.post-container {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+}
+
+.post {
+  max-width: 720px;     /* controls column width */
+  width: 100%;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.post-title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.post-date {
+  color: #666;
+  margin-bottom: 2.5rem;
+}
+
