@@ -1,10 +1,14 @@
 ---
 layout: post
 title: "LLM Poisoning - A Survey"
-thumbnail: /assets/images/llm_poisoning.png
+thumbnail: /assets/images/llm_poison.png
 date: "2026-02-02"
 ---
+<h>
+LLM Poisoning - A Survey
+</h>
 
+<p>
 Large Language Models (LLMs) are widely adopted in high-impact applications, yet their
 reliance on large-scale, weakly curated training data exposes them to data poisoning and backdoor
 attacks. Earlier assumptions suggested that such threats would be diluted by scale and mitigated
@@ -18,3 +22,5 @@ certain attacks, particularly Denial-of-Service and Belief Manipulation, persist
 with minimal poisoned data and do not diminish with increasing model scale. These findings
 highlight the limitations of current alignment-based defenses and the need for stronger data-
 centric protections to ensure trustworthy LLM deployment
+
+</p>
