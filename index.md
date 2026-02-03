@@ -2,7 +2,7 @@
 layout: default
 title: My Machine Learning Blog
 ---
-<div class="homepage">
+<div class="home-container">
     <div class="cards">
     {% for post in site.posts %}
         <article class="card">
