@@ -38,7 +38,7 @@ The current literature categorise LLM poisoning into 4 vectors of attack that ta
 <img src="/assets/images/pretrain_poison.png"
      alt="LLM Poisoning Overview"
      class="post-image"
-     style="max-width: 300px; display: block; margin: 2.5rem auto;">
+     style="max-width: 500px; display: block; margin: 2.5rem auto;">
 
 <p class="image-caption">
   Figure 1: Attacks that occur during training.
@@ -47,7 +47,7 @@ The current literature categorise LLM poisoning into 4 vectors of attack that ta
 <img src="/assets/images/inference_poison.png"
      alt="LLM Poisoning Overview"
      class="post-image"
-     style="max-width: 300px; display: block; margin: 2.5rem auto;">
+     style="max-width: 500px; display: block; margin: 2.5rem auto;">
 
 <p class="image-caption">
   Figure 2: Attacks that occur during inference.
