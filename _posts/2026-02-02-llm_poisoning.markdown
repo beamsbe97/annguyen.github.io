@@ -22,12 +22,41 @@ centric protections to ensure trustworthy LLM deployment
 
 <h3>Background</h3>
 
-<img src="/assets/images/llm_poison.png"
+The LLM training pipeline comprises multiple stages, presenting multiple surfaces for adversarial attacks that aim to modify the behaviours of the LLMs. 
+
+**Pretraining**: 
+
+**Supervised Fine-Tuning**: 
+
+**Alignment in post-training**:
+
+
+
+
+<h3>LLM Poisoning taxonomy</h3>
+The current literature categorise LLM poisoning into 4 vectors of attack that take place in different stages of the LLM lifecycle, namely Denial of Service, Jailbreaking, Prompt Stealing and Belief Manipulation. In the subsequent sections, we explore each attack vector in details.
+<img src="/assets/images/pretrain_poison.png"
      alt="LLM Poisoning Overview"
      class="post-image"
-     style="max-width: 500px; display: block; margin: 2.5rem auto;">
+     style="max-width: 300px; display: block; margin: 2.5rem auto;">
 
 <p class="image-caption">
-  Figure 1: Taxonomy of poisoning attacks on LLMs.
+  Figure 1: Attacks that occur during training.
 </p>
 
+<img src="/assets/images/inference_poison.png"
+     alt="LLM Poisoning Overview"
+     class="post-image"
+     style="max-width: 300px; display: block; margin: 2.5rem auto;">
+
+<p class="image-caption">
+  Figure 2: Attacks that occur during inference.
+</p>
+
+<h3>Denial of Service</h3>
+
+<h3>Jailbreaking</h3>
+
+<h3>Prompt Stealing</h3>
+
+<h3>Belief Manipulation</h3>
