@@ -21,3 +21,12 @@ highlight the limitations of current alignment-based defenses and the need for s
 centric protections to ensure trustworthy LLM deployment
 
 <h3>Background</h3>
+
+<img src="/assets/images/llm_poison.png"
+     alt="LLM Poisoning Overview"
+     class="post-image">
+
+<p class="image-caption">
+  Figure 1: Taxonomy of poisoning attacks on LLMs.
+</p>
+
