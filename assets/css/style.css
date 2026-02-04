@@ -80,6 +80,14 @@
   font-size: 1.05rem;
 }
 
+.post img {
+  display: block;
+  margin: 2.5rem auto;   /* centers horizontally */
+  max-width: 100%;
+  height: auto;
+}
+
+
 .post-title {
   font-size: 2.5rem;
   line-height: 1.2;
