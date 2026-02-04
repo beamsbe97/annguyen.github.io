@@ -1,0 +1,30 @@
+---
+layout: post
+title: "Monte carlo tree search for multi-agent Pacman Capture the Flag"
+thumbnail: /assets/images/llm_poison.png
+date: "2025-04-15"
+---
+
+<h3>Abstract</h3>
+Monte Carlo Tree Search (MCTS) has demon-
+strated strong performance in deterministic and
+adversarial games, however its vanilla form lacks
+context-awareness in complex multi-agent envi-
+ronments. This paper explores the integration of
+heuristic knowledge into MCTS for the UC Berke-
+ley Capture the Flag variant of Pacman. We in-
+vestigate several domain-informed enhancements
+to the expansion and simulation phases, including
+progressive bias through heuristic-based action
+sorting and softmax-weighted rollouts. Addition-
+ally, we implement a defensive MCTS agent to
+support team-based coordination. Through sys-
+tematic ablation studies and a large-scale tourna-
+ment evaluated with both win rates and TrueSkill
+scores, we show that incorporating heuristic strate-
+gies leads to significantly more robust and effec-
+tive gameplay. Our results underscore the impor-
+tance of informed search in multi-agent planning
+domains
+
+<h3>Background</h3>
