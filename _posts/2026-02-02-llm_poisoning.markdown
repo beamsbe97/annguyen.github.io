@@ -21,7 +21,7 @@ The LLM training pipeline comprises multiple stages, presenting multiple surface
 
 **Pretraining**: In this phase, the model is trained on a large corpus of public data to learn word meanings and general knowledge. Since the data is uncurated, attackers can inject poison that can result in modified behaviour of the LLM 
 
-**Supervised Fine-Tuning**: 
+**Supervised Fine-Tuning**: This is where the model learns to form coherent responses
 
 **Alignment in post-training**:
 
