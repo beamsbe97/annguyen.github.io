@@ -97,11 +97,24 @@ The first failure mode arises from conflicts between the mulitple objectives use
   Figure 5: Base 64 Jailbreak example, the prompt is obfuscated using Base64, each byte is encoded as three text characters, used to bypass the model’s safety training.
 </p>
 The second fialurre model arises from mismatched generalization between pretraining and safety alignment, as pretraining data is far larger than the data used for safety training. Attackes can exploit this gap by engineering prompts that the odel learned to handle during pretraiing but tthat were not covered during safety alingment, causing the model to comply without applying safety constraints. Encoded or unnatural fromats such as Base64 exemplify this issue, as they are often out of distribution for safety training leading the model to generate harmful content without refusal. See See Figure 5
+
 ---
 <h3>Prompt Stealing</h3>
 <h4>Mechanism of Prompt Stealing</h4>
+Prompt structure inference represents a thread because prompts often encode task-specific logic, safety constraints, and proprietary prompt-engineering knowledge. Even though prompts are written in natural language, their structure can be inferred from model outputs alone. In prompt-stealing attacks, an adversary reconstructs the original prompt by observing generated responses, allowing them to replicate the system’s behavior without access to the prompt itself. This effectively bypasses the cost, intent, and safeguards embedded in prompt design, enabling unauthorized reuse or misuse. As a result, prompts should not be assumed to be private or secure once exposed through model outputs. See Figure 7 for an example of prompt stealing
 
+<h4>Persistence</h4>
+
+Prompt stealing is an inference-time attack that does not depend on poisoned training data. It exploits the fact that aligned model outputs implicitly reveal the structure and constraints of the original prompt. Because instruction-following and alignment reinforce structured responses, prompt stealing remains effective across training and defense strategies.
 
 ---
 <h3>Belief Manipulation</h3>
 <h4>Mechanism of Belief Manipulation</h4>
+Belief manipulation is a trigger-free attack that globally biases a model’s behavior, causing systematic preferences or factual errors that can be exploited to influence opinions or spread misinformation. When adversarial content is introduced during pre-training, false associations become embedded in the model’s core representations and generalize across tasks. Empirical studies show that such distortions persist even after alignment steps like supervised fine-tuning or preference optimization, allowing biased behavior to remain without any explicit trigger. Figure 8 and 9 present examples of this attack
+
+
+The illusory truth effect describes how repeated exposure to misinformation during continual pre-training can make false statements appear reliable to LLMs. As frequently repeated false claims gain statistical prominence, the model becomes biased toward reproducing them, leading to gradual and hard-to-detect factual drift over time, especially in automated training pipelines.
+
+<h4>Persistence</h4>
+
+Belief manipulation persists because poisoned data embeds biased beliefs directly into a model’s weights, rather than relying on explicit triggers. Experiments show that injecting as little as 0.1% biased data during pre-training causes persistent, generalised distortions across model sizes that survive alignment and appear in normal, trigger-free queries. Continual exposure to misinformation can further induce gradual belief drift, making these distortions difficult to detect and allowing them to persist throughout the model’s lifecycle.
