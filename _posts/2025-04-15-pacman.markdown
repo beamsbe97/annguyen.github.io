@@ -6,26 +6,82 @@ date: "2025-04-15"
 show_header: false
 ---
 
+
+
+This project develops a vanilla MCTS agent and progressively augments it with heuristics to better handle the dynamics of the Capture the Flag environment in Pacman.
+
+
 <h3>Abstract</h3>
-Monte Carlo Tree Search (MCTS) has demon-
-strated strong performance in deterministic and
-adversarial games, however its vanilla form lacks
-context-awareness in complex multi-agent envi-
-ronments. This paper explores the integration of
-heuristic knowledge into MCTS for the UC Berke-
-ley Capture the Flag variant of Pacman. We in-
-vestigate several domain-informed enhancements
-to the expansion and simulation phases, including
-progressive bias through heuristic-based action
-sorting and softmax-weighted rollouts. Addition-
-ally, we implement a defensive MCTS agent to
-support team-based coordination. Through sys-
-tematic ablation studies and a large-scale tourna-
-ment evaluated with both win rates and TrueSkill
-scores, we show that incorporating heuristic strate-
-gies leads to significantly more robust and effec-
-tive gameplay. Our results underscore the impor-
-tance of informed search in multi-agent planning
-domains
+Monte Carlo Tree Search (MCTS) has demonstrated strong performance in deterministic and adversarial games. However, its vanilla form lacks context-awareness in complex multi-agent environments.
+
+We explore integrating heuristic knowledge into MCTS for the UC Berkeley Capture the Flag variant of Pacman, introducing:
+
+- Progressive bias via heuristic-based action sorting
+- Softmax-weighted rollouts for more accurate simulations
+- A specialized defensive MCTS agent for team coordination
+
+Through ablation studies and a tournament (evaluated with win rates and TrueSkill scores), we show that heuristic-informed strategies significantly improve robustness and gameplay effectiveness.
+
+<h3>Introduction</h3>
+
+Monte Carlo Tree Search (MCTS) is widely used in domains with large branching factors where defining a good evaluation function is infeasible. Unlike Minimax, which explores uniformly, MCTS balances exploration and exploitation using policies such as UCB1.
+
+We apply MCTS to the UC Berkeley Capture the Flag variant of Pacman, a challenging multi-agent adversarial environment where two teams of agents must steal food while defending their own territory.
+
+<img src="/assets/images/pacman.png"
+     alt="Pacman environment"
+     class="post-image"
+     style="width: 600px; display: block; margin: 2.5rem auto;">
+
+<p class="image-caption">
+  Figure1: Pacman Capture-the-Flag environment
+</p>
 
 <h3>Background</h3>
+Background
+
+MCTS operates in four stages:
+
+- Selection – Traverses the tree using UCB1: [ UCB1 = \bar{X_j} + 2C_p \sqrt{\frac{\ln n}{n_j}} ] balancing exploitation and exploration.
+- Expansion – Adds a new child node for an unexplored action.
+- Simulation – Runs rollouts (random or heuristic-driven) to estimate outcomes.
+- Backpropagation – Updates visit counts and rewards along the path.
+
+To adapt MCTS to Pacman CTF, we added:
+
+- Progressive Bias – guiding expansion with heuristics
+- Softmax Rollouts – probabilistic selection favoring promising states
+
+<h3>Methods</h3>
+Baselines
+
+- Heuristic Reflex Agent: Offensive agent collects food; defensive agent intercepts opponents.
+- Vanilla MCTS: Uniform random rollouts with default hyperparameters:
+    - Rollout depth: 10
+    - Simulation epsilon (ε): 0.2
+    - Exploration constant (Cp): 0.707
+
+Domain Adaptations
+
+- Perfect Information assumption (access to full game state)
+- Fixed time per move (0.5s budget)
+- Limited rollout depth
+- Removing STOP action from legal actions
+- Custom state evaluation with features:
+    - Distance to food (+1.5)
+    - Carrying pellets (+20.0)
+    - Distance to home (+2.0)
+    - Ghost proximity (−8.0)
+- ε-greedy simulation policy
+- Early return-to-base rule when carrying food
+
+Heuristic Enhancements
+
+- Untried Action Sorting: Chooses best successor via heuristic evaluation
+- Softmax Weighted Rollouts:
+[ P(a_i) = \frac{e^{s_i/\tau}}{\sum_j e^{s_j/\tau}} ]
+biases simulations toward high-value states
+- Rainbow Agent: Combines weighted rollouts, RAVE, and action sorting
+- Defensive Agent:
+    - Pursues visible intruders
+    - Patrols territory when no intruders detected
