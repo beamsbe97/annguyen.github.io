@@ -68,7 +68,7 @@ Levels Processing
 <img src="/assets/images/mario_levelprocessing.png"
      alt="mario_pipeline"
      class="post-image"
-     style="width: 600px; display: block;">
+     style="width: 600px; display: block; align:center;">
 
 ---
 <h3>Level Generation Models</h3>
@@ -80,6 +80,7 @@ Levels Processing
 - Output: unplayable, mostly floor tiles.
 <img src="/assets/images/mario_baseline.png"
      alt="belief_distorted"
+     
      class="post-image"
      style="width: 600px; display: block;">
 
