@@ -78,9 +78,9 @@ Levels Processing
 - Simple fully-connected generator.
 - Fails to preserve spatial structure.
 - Output: unplayable, mostly floor tiles.
+
 <img src="/assets/images/mario_baseline.png"
      alt="belief_distorted"
-     
      class="post-image"
      style="width: 600px; display: block;">
 
