@@ -89,3 +89,32 @@ biases simulations toward high-value states
 - Defensive Agent:
     - Pursues visible intruders
     - Patrols territory when no intruders detected
+
+
+---
+<h3>Experiments</h3>
+
+
+- Setup: UC Berkeley Pacman AI framework
+- Evaluation: 100 games per configuration, multiple seeds
+- Metrics: win rate, food collected, oscillation rate, decision time
+- Tournament: Round-robin (100 matches per agent pair) + TrueSkill ranking
+
+Hyperparameter Ablation
+
+- Rollout Depth: Too shallow misses opportunities, too deep causes loops; best = 10
+- Simulation Epsilon (ε): Best trade-off at 0.2–0.3
+- Cp (exploration constant): Best at 0.707
+
+---
+<h3>Results</h3>
+
+<img src="/assets/images/pacman_matrix.png"
+     alt="Pacman environment"
+     class="post-image"
+     style="width: 600px; display: block; margin: 2.5rem auto;">
+
+<p class="image-caption">
+  Confusion matrix of head-to-head matches.
+</p>
+

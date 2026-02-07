@@ -107,3 +107,36 @@ PPO (Proximal Policy Optimization)
 - Actor-Critic with clipped surrogate objective.
 - Stable and efficient for sparse reward settings.
 - Outperformed DQN in final evaluations.
+
+
+---
+<h3>Experiments</h3>
+
+- Difficulty Classification
+    - Levels scored & labeled.
+    - Example: Easy (>0), Medium (-25–0), Hard (<-25).
+- DCGAN Ablation Study
+    - Tested learning rates, batch sizes, noise std, smoothing.
+    - Selected best configuration for stable generation.
+- Diffusion Training
+    - Progressive architecture refinements (V1–V4).
+    - Strong convergence, weak level coherence.
+- Agent Evaluation on Generated Levels
+    - PPO tested on generated levels.
+    - Mixed results: some levels aligned with difficulty labels, others mismatched.
+
+---
+<h3>Results</h3>
+<h4>MLP</h4>
+- Failed to generate realistic levels.
+
+<h4>DCGAN</h4>
+- Produced playable, coherent levels.
+- PPO successfully completed most generated levels.
+- Some difficulty mismatches occurred.
+
+<img src="/assets/images/mario_dcgan_results.png"
+     alt="belief_distorted"
+     class="post-image"
+     style="width: 600px; display: block;">
+
