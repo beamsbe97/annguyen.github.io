@@ -68,7 +68,7 @@ Levels Processing
 <img src="/assets/images/mario_levelprocessing.png"
      alt="mario_pipeline"
      class="post-image"
-     style="width: 600px; display: block; align:center;">
+     style="width: 600px; display: block; align:left;">
 
 ---
 <h3>Level Generation Models</h3>
