@@ -1,0 +1,77 @@
+---
+layout: post
+title: "Enhancing Deep Q-Networks with Experience Replay and Target Networks"
+thumbnail: /assets/images/pacman.png
+date: "2025-04-15"
+show_header: false
+---
+
+
+
+This project develops a vanilla MCTS agent and progressively augments it with heuristics to better handle the dynamics of the Capture the Flag environment in Pacman.
+
+
+<h3>Introduction</h3>
+Deep reinforcement learning (DRL) faces two major challenges compared to supervised learning:
+
+    Correlated training samples: Sequential data generation violates the i.i.d. assumption, leading to biased updates.
+    Moving target problem: Q-learning updates are based on ever-changing targets, making convergence difficult.
+
+To address these issues, DQN introduces:
+
+    Experience Replay: Randomly samples past transitions to break correlations.
+    Infrequent Target Network Updates: Uses a separate, slowly updated target network to stabilize learning.
+
+The DQN approximates the action-value function ( Q(s,a) ) using deep neural networks instead of tabular methods, allowing it to scale to high-dimensional state spaces.
+
+---
+
+
+<h3>Methods</h3>
+Experiment Setup
+
+We evaluated various agent configurations using the CartPole environment from OpenAI Gymnasium:
+
+- Training steps: 1 million
+- Evaluations: average reward over the last 100 episodes
+- Each configuration was run five times to account for stochasticity.
+
+The neural network architecture consisted of two fully connected hidden layers with ReLU activations.
+<h3>Results</h3>
+<img src="/assets/images/a2c_lc.png"
+     alt="Pacman environment"
+     class="post-image"
+     style="width: 600px; display: block; margin: 2.5rem auto;">
+
+<img src="/assets/images/sac_lc.png"
+     alt="Pacman environment"
+     class="post-image"
+     style="width: 600px; display: block; margin: 2.5rem auto;">
+
+<img src="/assets/images/sac_compare.png"
+     alt="Pacman environment"
+     class="post-image"
+     style="width: 600px; display: block; margin: 2.5rem auto;">
+
+
+<img src="/assets/images/sac_compare.png"
+     alt="Pacman environment"
+     class="post-image"
+     style="width: 600px; display: block; margin: 2.5rem auto;">
+
+<img src="/assets/images/ppo_compare.png"
+     alt="Pacman environment"
+     class="post-image"
+     style="width: 600px; display: block; margin: 2.5rem auto;">
+
+<p class="image-caption">
+  Confusion matrix of head-to-head matches.
+</p>
+
+
+<h3>Analysis</h3>
+
+
+---
+<h3>Future Work</h3>
+
