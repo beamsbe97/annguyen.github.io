@@ -14,13 +14,13 @@ This project develops a vanilla MCTS agent and progressively augments it with he
 <h3>Introduction</h3>
 Deep reinforcement learning (DRL) faces two major challenges compared to supervised learning:
 
-    Correlated training samples: Sequential data generation violates the i.i.d. assumption, leading to biased updates.
-    Moving target problem: Q-learning updates are based on ever-changing targets, making convergence difficult.
+- Correlated training samples: Sequential data generation violates the i.i.d. assumption, leading to biased updates.
+- Moving target problem: Q-learning updates are based on ever-changing targets, making convergence difficult.
 
 To address these issues, DQN introduces:
 
-    Experience Replay: Randomly samples past transitions to break correlations.
-    Infrequent Target Network Updates: Uses a separate, slowly updated target network to stabilize learning.
+- Experience Replay: Randomly samples past transitions to break correlations.
+- Infrequent Target Network Updates: Uses a separate, slowly updated target network to stabilize learning.
 
 The DQN approximates the action-value function ( Q(s,a) ) using deep neural networks instead of tabular methods, allowing it to scale to high-dimensional state spaces.
 
@@ -54,7 +54,7 @@ The neural network architecture consisted of two fully connected hidden layers w
      style="width: 600px; display: block; margin: 2.5rem auto;">
 
 
-<img src="/assets/images/sac_compare.png"
+<img src="/assets/images/ppo_lc.png"
      alt="Pacman environment"
      class="post-image"
      style="width: 600px; display: block; margin: 2.5rem auto;">
@@ -71,7 +71,10 @@ The neural network architecture consisted of two fully connected hidden layers w
 
 <h3>Analysis</h3>
 
-
----
-<h3>Future Work</h3>
-
+Soft Actor-Critic (SAC) underperformed compared to Proxi-
+mal Policy Optimization (PPO) in the CartPole environ-
+ment primarily due to differences in action space compat-
+ibility and exploration strategies. CartPole has a discrete
+action space, which PPO handles naturally, whereas SAC
+was originally designed for continuous control tasks and re-
+quires additional adaptations to function in discrete settings
