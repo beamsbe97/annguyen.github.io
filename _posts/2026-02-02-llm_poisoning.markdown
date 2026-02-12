@@ -5,7 +5,7 @@ thumbnail: /assets/images/llm_poison.png
 date: "2026-02-02"
 show_header: false
 ---
-
+[Full Report](./assets/stai_projet.pdf)
 
 <h3>Introduction</h3>
 
