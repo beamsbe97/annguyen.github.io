@@ -10,7 +10,7 @@ show_header: false
   <source src="/assets/images/mario_gen_play.mp4" type="video/mp4">
 </video>
 <p class="image-caption">
-  Mario agent navigating a generated level
+  PPO Mario agent navigating a generated level
 </p>
 
 <h2>
