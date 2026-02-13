@@ -9,6 +9,10 @@ show_header: false
 <video width="100%" controls>
   <source src="/assets/images/mario_gen_play.mp4" type="video/mp4">
 </video>
+<p class="image-caption">
+  Mario agent navigating a generated level
+</p>
+
 <h2>
 Generating Playable Mario Levels from Agent Experience
 </h2>
