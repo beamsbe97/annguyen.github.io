@@ -56,8 +56,6 @@ To adapt MCTS to Pacman CTF, we added:
 - Progressive Bias – guiding expansion with heuristics
 - Softmax Rollouts – probabilistic selection favoring promising states
 
----
-
 <h3>Methods</h3>
 Baselines
 

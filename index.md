@@ -11,7 +11,13 @@ show_header: false
     <div class="cards single-column">
       {% for post in site.posts %}
         <article class="card">
-          <img src="{{ post.thumbnail }}" alt="{{ post.title }}">
+          {% if post.thumbnail contains '.mp4' %}
+            <video autoplay loop muted playsinline class="card-thumb">
+              <source src="{{ post.thumbnail }}" type="video/mp4">
+            </video>
+          {% else %}
+            <img src="{{ post.thumbnail }}" alt="{{ post.title }}">
+          {% endif %}
           <div class="card-content">
             <h2 class="card-title">
               <a href="{{ post.url }}">{{ post.title }}</a>
